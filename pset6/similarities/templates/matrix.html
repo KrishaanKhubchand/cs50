@@ -1,0 +1,28 @@
+<!-- TODO -->
+<h1> ok </h1>
+    
+    <!-- print table first --> 
+    {% block main %}
+    <table>
+        <tr> 
+        <td class = "hat"> </td>
+        {% for letter in accS1 %}
+        <td class = "hat">
+            {{ letter }}
+        </td>
+        {% endfor %}
+        </tr>
+        {% for row in matrix %}
+        <tr>
+            <td class = "hat">
+            {{ accS2[loop.index0] }}
+            </td>
+            {% for col in row %}
+            <td>
+                {{ col[0] }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}

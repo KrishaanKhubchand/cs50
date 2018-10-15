@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h1>Hi, {{userData.username}} - Here's Your Portfolio: </h1> <br>
+<table>
+    <tr>
+        <th> Symbol </th>
+        <th> Name </th>
+        <th> Shares </th>
+        <th> Price </th>
+        <th> Total </th>
+    </tr>
+    {% for stock in ledgerData %} 
+    <tr>
+        <td> {{stock.stockSymbol}}</td>
+        <td> {{stock.stockName}} </td>
+        <td> {{stock.quantity}} </td>
+        <td> ${{stock.pricePerShare}} </td>
+        <td> ${{stock.totalCost}} </td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<h1> Total Cash = ${{userData.cash}}</h1>
+<h1> Net Worth = $ {{netWorth}} </h1>
+
+{% endblock %}

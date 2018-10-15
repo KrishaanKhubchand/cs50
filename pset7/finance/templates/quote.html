@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<h1> Find Quotation:</h1>
+<form action = "/quote" method ="post">
+    <input type="text" name="search" placeholder = "Search for Quote"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+
+
+{%endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Deposite Cash
+{% endblock %}
+
+{% block main %}
+<h1> Add Cash to Account:</h1>
+<h3> Current Cash: ${{currentCash}}</h3>
+<form action = "/deposit" method ="post">
+    <input type="number" min="1" name="cashInput" placeholder = "Amount of cash you'd like to deposit"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+{%endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell your Shares:
+{% endblock %}
+
+{% block main %}
+
+<form action="/sell" method = "post">
+    <select name = "theStock">
+    {% for stock in ledgerData %}
+    <option value = "{{ stock.stockSymbol }}"> {{ stock.stockName }}</option>
+    {% endfor %}
+    </select>
+    <input type="number" min="1" name="shares" placeholder = "Number of Shares"/> 
+    <input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<table>
+    <tr>
+        <th> Symbol </th>
+        <th> Name </th>
+        <th> Transaction Type </th>
+        <th> Date </th>
+        <th> Share Quantity </th>
+        <th> Share Price </th>
+        <th> Transaction Total </th>
+    </tr>
+    {% for transaction in historyTable %} 
+    <tr>
+        <td> {{transaction.stockSymbol}}</td>
+        <td> {{transaction.stockName}} </td>
+        <td> {{transaction.transactionType}} </td>
+        <td> {{transaction.actionDate}} </td>
+        <td> {{transaction.quantity}} </td>
+        <td> {{transaction.sharePrice}}</td>
+        <td> {{transaction.netFlow}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
